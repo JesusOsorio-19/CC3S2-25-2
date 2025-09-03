@@ -2,6 +2,8 @@
 
 ## Tiempo invertido
 - Día 1: 01h:10min
+- Día 2: 02:30min
+- Día 3: 02:30min
 
 ## Desarrollo
 
@@ -144,3 +146,155 @@ Aunque el KPI técnico (latencia, errores) se mantenga estable, una caída en m�
 ![](imagenes/pipeline_canary.png)
 
 Esta imagen ilustra un pipeline de despliegue continuo que incorpora una estrategia de lanzamiento canary para minimizar riesgos. El proceso comienza con la fase de Build (construcción) del software. Una vez construido, pasa por rigurosas pruebas automatizadas que incluyen Unit Tests, Integration Tests y Contract Tests para asegurar su calidad. Solo después de superar estas pruebas, el software se envía a un Deploy Canary (despliegue canario), donde una pequeña porción del tráfico (indicado como 10%) es redirigida a la nueva versión para monitorear su rendimiento en un entorno real. Si esta fase canary es exitosa y estable, se procede al Deploy Production (despliegue a producción), donde la nueva versión se lanza completamente (100% Rollout) a todos los usuarios, completando un ciclo de entrega seguro y eficiente.
+
+## Día 3: Evidencia práctica y cierre
+
+### Fundamentos prácticos sin comandos
+
+#### 1. HTTP - Contrato observable
+
+![](imagenes/http-evidencia.png)
+
+**Hallazgos reportados** (usando Postman en `https://www.google.com/`):
+
+- **Método:** GET
+- **Código de estado:** 200 OK
+- **Cabeceras clave identificadas:** 
+    - Cache-control: Influye en rendimiento porque permite que clientes almacenen respuestas sin ir al servidor en cada peticion.
+    - Content-Security-Policy-Report-Only: El modo "Report-Only" permite a Google monitorear violaciones de CSP sin bloquear funcionalidad
+
+#### 2. DNS - Nombres y TTL
+
+![](imagenes/dns-ttl.png)
+
+> *Para obtener este resultado usamos el comando* Resolve-DnsName google.com *en PowerShell de Windows.*
+
+**Hallazgos reportados** (usando `Resolve-DnsName` en PowerShell):
+- **Tipo de registro**: A (Address record - IPv4)
+- **TTL observado**: 266 segundos (4.4 minutos)
+- **Dominio consultado**: `google.com`
+- **Múltiples IPs balanceadas**: `108.177.123.101`, `108.177.123.138`, etc.
+
+**Interpretación del impacto en rollbacks:**
+El TTL de 266 segundos significa que Google puede ejecutar **rollbacks DNS rápidos** (máximo 4.4 minutos de propagación) vs TTL típicos de 3600s (1 hora). Esto permite:
+- **Ventanas de inconsistencia cortas**: Durante rollbacks, usuarios ven versión anterior máximo 266s
+- **Agilidad operativa**: Cambios de infraestructura se reflejan globalmente en <5 minutos
+- **Trade-off**: Mayor frecuencia de consultas DNS vs velocidad de cambios
+
+#### 3. TLS - Seguridad en tránsito
+
+![](imagenes/tls-cert.png)
+
+**Hallazgos reportados** (usando visor de certificados del navegador en `https://www.google.com`):
+- **CN (Common Name)**: `*.google.com`
+- **Vigencia**: Desde 11 agosto 2025 hasta 3 noviembre 2025
+- **Emisora**: Google Trust Services
+
+**Interpretación del impacto de fallo de validación:**
+Si **no valida** la cadena de certificados ocurre:
+- **Errores de confianza**: Navegador muestra "Tu conexión no es privada", bloqueando acceso por defecto
+- **Riesgo MITM**: Atacantes pueden interceptar tráfico con certificados falsos sin detección automática
+- **Impacto UX**: Usuarios enfrentan warnings críticos, ~70% abandona el sitio según métricas de usabilidad
+
+#### 4. Puertos - Estado de runtime
+
+![](imagenes/puertos.png)
+
+**Hallazgos reportados** (usando `netstat -an | findstr LISTENING` en PowerShell):
+- **Puerto 3306**: MySQL Database Server 
+- **Puerto 445**: SMB/File Sharing de Windows 
+
+**Interpretación para diagnóstico de despliegues:**
+Esta evidencia ayuda detectar:
+- **Despliegues incompletos**: Si aplicación esperada en puerto 8080 no aparece en lista → servicio no inició correctamente
+- **Conflictos de puerto**: Puerto 3306 ocupado por MySQL previene deployment de otra app en mismo puerto → port binding failure  
+- **Health check directo**: Puertos en estado LISTENING confirman servicios activos antes de pruebas funcionales, diagnóstico rápido de "¿está corriendo el servicio?"
+
+#### 5. 12-Factor - Port binding, configuración, logs
+
+- **Port binding:** parametrizado por variable de entorno (PORT=8080) en la configuración externa.
+
+- **Logs:** enviados a stdout/stderr entonces el sistema de orquestación los recolecta, no deben escribirse en archivos locales con rotacion manual, porque rompe la portabilidad y dificulta el monitoreo centralizado.
+
+- **Anti-patron:** credenciales dentro del codigo compromete la seguridad y rompe reproducibilidad.
+
+#### 6. Checklist de diagnóstico (incidente simulado)
+
+**Escenario**: Usuarios reportan intermitencia. Algunos acceden normalmente, otros experimentan lentitud y errores eventuales.
+
+**Checklist de 6 pasos ordenados:**
+
+| **#** | **Objetivo** | **Evidencia Esperada** | **Interpretación** | **Acción Siguiente** |
+|-------|-------------------|----------------------|---------------------|------------------|
+| **1** | Validar contrato HTTP | Carga bien, <2 segundos | Error 500 → app rota; No carga → red | Si falla: Paso 2. Si OK: Paso 4 |
+| **2** | Verificar resolución DNS | Encuentra la dirección correcta | IP incorrecta → problema DNS | Si falla: limpiar caché, revisar DNS |
+| **3** | Inspeccionar certificado TLS | Candado verde, certificado válido | Vencido → "sitio no seguro" | Si falla: renovar certificado urgente |
+| **4** | Confirmar puertos/servicios | App y base de datos activas | No corriendo → servicio apagado | Si falla: reiniciar servicios |
+| **5** | Analizar logs aplicación | Logs muestran errores específicos | Errores indican causa exacta | Según error: reiniciar/arreglar código |
+| **6** | Verificar config runtime | URLs, claves API correctas | Config mala → no conecta servicios | Si falla: corregir config, redesplegar |
+
+### Desafíos y arquitectura
+
+#### Desafíos de DevOps y mitigaciones
+
+**Tres desafíos principales de migrar a DevOps:**
+
+1. **Cultural**: 45% de empresas tienen resistencia al cambio - equipos acostumbrados a trabajar separados
+2. **Técnico**: Demasiadas herramientas diferentes que no se comunican entre sí  
+3. **Reglas**: Balancear la entrega rápida vs cumplimiento de regulaciones de seguridad
+
+**Riesgos y cómo evitarlos:**
+
+1. Error critico en produccion por codigo defectuoso
+
+    - Mitigacion: Rollback automatizado como kubectl rollout undo, pipelines con reversion preconfigurada.
+
+    - Decision: si la metrica de salud cae >30% en los primeros 5 min, activar rollback inmediato.
+
+2. Impacto masivo en usuarios por cambios no validados
+
+    - Mitigacion: Despliegues graduales (canary release).
+
+    - Decision: si el error rate en canary >2% sobre baseline, detener y aislar el cambio.
+
+3. Errores no detectados por sesgo individual
+
+    - Mitigacion: Revision cruzada de codigo.
+
+    - Decision: ningun merge directo a main; cambios sensibles limitados a un subconjunto de pods/zonas hasta validacion.
+
+#### Arquitectura mínima para DevSecOps
+
+![](imagenes/arquitectura-minima.png)
+
+**Contribucion de cada capa a despliegues seguros y reproducibles**
+
+1. **Cliente -> DNS**
+
+    * Permite descubrimiento confiable de servicios.
+
+    * DNSSEC asegura integridad de la resolución de nombres.
+
+2. **DNS -> Servicio (HTTP)**
+
+    * HTTP provee el contrato de comunicacion.
+
+    * Y las politicas de cache garantizan coherencia entre entornos (staging/produccion).
+
+3. **Servicio (HTTP) -> TLS**
+
+    * TLS asegura confidencialidad e integridad de los datos.
+
+    * Certificados reproducibles entre entornos.
+
+4. **Controles adicionales**
+
+    * Limites de tasa y la segmentacion reducen impacto en caso de error o ataque.
+
+    * Contratos de API garantizan compatibilidad y evitan los cambios sorpresivos.
+
+**Relación 12-Factor:**
+
+- **Config por entorno**: `DNS_SERVER` diferente dev/prod, código idéntico. No se “hardcodea” en el código sino se inyecta por variables de entorno por ejemplo, comparar *diffs* mínimos entre entornos.
+
+- **Logs centralizados**: Todas las capas envían logs al mismo dashboard para análisis unificado.
