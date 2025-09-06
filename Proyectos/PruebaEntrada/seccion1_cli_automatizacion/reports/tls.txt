@@ -1,0 +1,21 @@
+TLS via curl -Iv
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host example.com:443 was resolved.
+* IPv6: 2600:1406:5e00:6::17ce:bc1b, 2600:1406:bc00:53::b81e:94c8, 2600:1406:bc00:53::b81e:94ce, 2600:1408:ec00:36::1736:7f24, 2600:1408:ec00:36::1736:7f31, 2600:1406:5e00:6::17ce:bc12
+* IPv4: 23.215.0.136, 23.215.0.138, 23.220.75.232, 23.220.75.245, 23.192.228.80, 23.192.228.84
+*   Trying 23.215.0.136:443...
+* Connected to example.com (23.215.0.136) port 443
+* ALPN: curl offers h2,http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+*  CAfile: /etc/ssl/certs/ca-certificates.crt
+*  CApath: /etc/ssl/certs
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [29 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [2350 bytes data]

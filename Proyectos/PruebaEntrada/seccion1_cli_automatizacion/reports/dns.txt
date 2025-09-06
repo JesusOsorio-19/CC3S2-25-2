@@ -1,0 +1,18 @@
+A
+example.com.		36	IN	A	23.215.0.138
+example.com.		36	IN	A	23.220.75.232
+example.com.		36	IN	A	23.220.75.245
+example.com.		36	IN	A	23.192.228.80
+example.com.		36	IN	A	23.192.228.84
+example.com.		36	IN	A	23.215.0.136
+AAAA
+example.com.		172	IN	AAAA	2600:1406:5e00:6::17ce:bc12
+example.com.		172	IN	AAAA	2600:1406:5e00:6::17ce:bc1b
+example.com.		172	IN	AAAA	2600:1406:bc00:53::b81e:94c8
+example.com.		172	IN	AAAA	2600:1406:bc00:53::b81e:94ce
+example.com.		172	IN	AAAA	2600:1408:ec00:36::1736:7f24
+example.com.		172	IN	AAAA	2600:1408:ec00:36::1736:7f31
+MX
+example.com.		0	IN	MX	0 errdomain.
+
+Nota (editar): TTL alto vs bajo impacta en ...
