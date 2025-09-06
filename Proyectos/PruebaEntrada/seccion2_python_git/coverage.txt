@@ -1,0 +1,18 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.3, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\jesus\DesarrolloSoftware 25-2\Curso-CC3S2\proyectos\Prueba_entrada_CC3S2\seccion2_python_git
+plugins: cov-6.3.0
+collected 7 items
+
+tests\test_app.py .......                                                [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.12.3-final-0 _______________
+
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+app\__init__.py       0      0   100%
+app\app.py           32     13    59%   21, 39-60
+-----------------------------------------------
+TOTAL                32     13    59%
+============================== 7 passed in 0.08s ==============================

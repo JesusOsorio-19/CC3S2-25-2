@@ -1,0 +1,100 @@
+* ce6404c (HEAD -> main, origin/main, origin/HEAD) Actividad 8 CC3S2
+* 3b00a16 Actividad 8 CC3S2
+* 78fcb5d Instrucciones
+* 6fb4447 Intrucciones
+* 8e9338a network_answers.txt
+* c880ffb example.html
+* a3a0c36 dig_output.txt
+* 2a20711 deploy_scenario.txt
+* 0bfe346 api_title.txt
+* 5fd2bcd api_response.json
+* e2e80b9 test_app.py
+* 413963e git_log.txt
+* 892c838 coverage.txt
+* 3fe7991 app.py
+* 39cfa0a __init__.py
+* 69acf58 Makefile
+* 7caaecd Delete proyectos/Prueba_entrada_CC3S2/seccion1_cli_automatizacion/reports/reportes.txt
+* e8e8691 Archivo reportes
+* a643ce1 syscheck.sh
+* 6e12178 syscheck.sh
+* bac5fcf Actividad 7 CC3S2
+* 9b084f7 Actividad 7 CC3S2
+* c2aff18 Actividad 7 CC3S2
+* 8a284d1 Respuestas actividad 4 CC3S2
+* 49fe23c Respuestas actividad 2 CC3S2
+* 4d40e93 Respuestas actividad 5 CC3S2 (Parte 2)
+* f2760a3 Actividad 2 CC3S2
+* bf7b411 Respuestas actividad 5 CC3S2 (Parte 2)
+* 40bb987 Respuestas actividad 5 CC3S2 (Parte 2)
+* 1a300d3 Laboratorio ejemplo de bash
+* a1ee116 Actividad 3 CC3S2
+* 744ba45 Actividad 3 CC3S2
+* 05b24e1 Actividad 4 CC3S2
+* 32c82d8 Actividad 5 CC3S2
+* 4b024d7 Actividad 6 CC3S2
+* f601dd3 Actividad 5 CC3S2
+* a30b259 Actividad 4 CC3S2
+* 7566618 Actividad 1 CC3S2
+* 8b6efc4 Actividad 5 CC3S2
+* f8200ba Actividad 5 CC3S2
+* 5a2a872 Actividad 5 CC3S2
+* 2902e10 Makefile
+* 42e182b Instrucciones
+* 224c0a5 Instrucciones
+*   8cb23f4 Merge branch 'main' of https://github.com/kapumota/Curso-CC3S2
+|\  
+| * 70a8bae test_hello.py
+* | 300bd36 test_hello.py
+|/  
+* 87c92fc test_hello.py
+* 3c45769 hello.py
+* d283756 __init__.py
+* 801aca7 run_test.sh
+* 4f9baaf Makefile
+* 658dde6 Delete labs/Laboratorio2.md
+* 68421ab Laboratorio 2 CC3S2
+* a92d1c5 Actividad 4 CC3S2
+* efbd9fb Actividad 6 CC3S2
+* 688d7a6 Actividad 6 CC3S2
+* e5dabe3 Delete labs/Laboratorio2.md
+* 8e16466 Actividad 4 CC3S2
+* 3ff7a3a Laboratorio 2 CC3S2
+* f13b480 Laboratorio 2 CC3S2
+* cf44520 Laboratorio 2 CC3S2
+* 14b3f9c Make para devops y devsecops
+* bc4f97e Make para devops y devsecops
+* 7205add Make para devops y devsecops
+* 952f6af Actividad 3 CC3S2
+* aca595c Actividad 3 CC3S2
+* ecebf3a Fundamentos operativos devops-devsecops
+* 3cbda8d Fundamentos operativos devops
+* 90c7bab Laboratorio integral en Bash (5 etapas reejecutables)
+* 53fb38e Actividad 2 CC3S2
+* 12056f6 README
+* c7d7f9f Delete actividades/Actividad1-CC3S2.txt
+* d3a7b4b Actividad 1 CC3S2
+* 2d13eff Actividad 1 CC3S2
+* 0189cb9 README
+* 0ca9433 Instrucciones
+* 0500c24 Instrucciones
+* 62e3dcd app Flask
+* 6dcc11d miapp.service
+* e0bfd0f miapp.conf
+* 42a746c 01-miapp.yaml
+*   a142e0e Merge branch 'main' of https://github.com/kapumota/Curso-CC3S2
+|\  
+| * d498410 Metodología 12-Factor App
+* | 1249999 Makefile
+|/  
+* 53f35f2 DevOps: HTTP, DNS y TLS
+* 7299450 Fundamentos de DevOps y DevSecOps: Del código a la producción
+* 764dc50 DevOps: HTTP, DNS y TLS
+* 559c705 Fundamentos de DevOps y DevSecOps: Del código a la producción
+*   aef18b6 Merge branch 'main' of https://github.com/kapumota/Curso-CC3S2
+|\  
+| * b216fa6 README
+| * 11b1857 README
+* | b2e0845 Fundamentos de DevOps y DevSecOps: Del Código a la Producción
+|/  
+* f2a6fcc Initial commit
