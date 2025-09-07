@@ -1,0 +1,15 @@
+google.com.		291	IN	A	108.177.123.113
+google.com.		291	IN	A	108.177.123.139
+google.com.		291	IN	A	108.177.123.101
+google.com.		291	IN	A	108.177.123.138
+google.com.		291	IN	A	108.177.123.102
+google.com.		291	IN	A	108.177.123.100
+google.com.		266	IN	AAAA	2800:3f0:4003:c0f::66
+google.com.		266	IN	AAAA	2800:3f0:4003:c0f::64
+google.com.		266	IN	AAAA	2800:3f0:4003:c0f::71
+google.com.		266	IN	AAAA	2800:3f0:4003:c0f::65
+google.com.		0	IN	MX	0 errdomain.
+google.com.		246640	IN	NS	ns1.google.com.
+google.com.		246640	IN	NS	ns4.google.com.
+google.com.		246640	IN	NS	ns2.google.com.
+google.com.		246640	IN	NS	ns3.google.com.

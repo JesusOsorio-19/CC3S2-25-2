@@ -30,3 +30,19 @@ Para git, al ser un repositorio clonado, al usar git log me salía el historial 
 | Rebase       | Reaplica commits encima de otra rama            | Historial limpio y lineal, sin commits merge | Actualizar ramas o limpiar historial antes de merge |
 | Cherry-pick  | Aplica commits específicos a otra rama          | Nuevos commits duplicados         | Traer cambios puntuales sin fusionar ramas completas |
 
+## Sección 3 - Redes, HTTP/TLS y API
+
+Presenté un probema al ejecutar 
+```bash
+dig google.com ANY +noall +answer > dig_output.txt
+```
+ya que no me devolvía nada, y esto es algo normal ya que muchos servidores DNS modernos bloquean consultas ANY por seguridad.  
+Así que opté por realizar consultas específicas.
+![](imgs/dig.png)
+Donde el contenido se observa en `dig_output.txt` así como todo lo requerido en esta sección.
+
+### Sección 3.2 - API + jq
+
+**Content-Type header:** `application/json; charset=utf-8`
+
+La API devuelve datos en formato JSON con codificación UTF-8.

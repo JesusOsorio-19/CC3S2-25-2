@@ -1,0 +1,14 @@
+HTTP (HyperText Transfer Protocol) es un protocolo estándar para la transferencia de datos en la 
+web. Permite la comunicación entre clientes (como navegadores) y servidores para cargar 
+páginas web. HTTP utiliza normalmente el puerto 80 para establecer conexiones sin cifrado, 
+lo que significa que los datos viajan en texto plano y pueden ser vulnerables a intercepciones o modificaciones.
+
+En cambio, HTTPS (HTTP Security) usa el puerto 443 y combina HTTP con TLS (Transport Layer Security) 
+para cifrar la comunicación. TLS es un protocolo criptográfico que asegura la privacidad, autenticidad e 
+integridad de los datos transmitidos, evitando que terceros puedan acceder o alterar la información. TLS utiliza 
+cifrado y certificados digitales para verificar que la conexión sea segura y que el servidor sea legítimo.
+
+Y utilizamos TLS con HTTP(HTTPS) para proteger datos sensibles, como contraseñas y números de tarjetas, especialmente 
+en redes públicas. Mientras HTTP es adecuado para información pública, HTTPS garantiza una comunicación segura, 
+generando confianza en los usuarios al mostrar un candado en el navegador(comunmente al lado izquierdo de la URL), lo que
+indica que la conexión está protegida. Por eso, TLS es vital para la seguridad en la web moderna.

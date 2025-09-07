@@ -1,0 +1,22 @@
+Pipeline mínimo de CI/CD
+
+1. Desarrollo -> Código
+    - Desarrolladores escriben código y hacen commits
+    - Herramienta: Git (GitHub/GitLab)
+
+2. Integración Continua -> Pruebas
+    - Trigger automático en cada push/merge
+    - Herramienta: GitHub Actions / Jenkins / GitLab CI
+
+3. Despliegue Continuo -> Producción
+    - Deploy automático si todas las pruebas pasan
+    - Herramienta: Docker + Kubernetes / AWS
+
+Beneficios del Pipeline:
+
+    - Detección temprana de errores
+    - Deploys más frecuentes y confiables  
+    - Reducción de intervención manual
+    - Trazabilidad completa de cambios
+    - Rollbacks rápidos en caso de problemas
+
