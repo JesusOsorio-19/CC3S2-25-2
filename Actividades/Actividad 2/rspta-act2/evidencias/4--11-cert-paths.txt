@@ -1,0 +1,2 @@
+crt=/mnt/c/Users/jesus/DesarrolloSoftware 25-2/actividad2/certs/miapp.local.crt
+key=/mnt/c/Users/jesus/DesarrolloSoftware 25-2/actividad2/certs/miapp.local.key
