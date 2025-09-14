@@ -1,0 +1,208 @@
+Script started on 2025-09-13 17:47:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="47"]
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mtouch archivo1.txt archivo2.txt archivo3.doc[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctouch archivo1.txt archivo2.txt archivo3.doc
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls archivo*.txt[27mls archivo*.txt
+[?2004larchivo1.txt  archivo2.txt
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls | wc -l[27mls | wc -l
+[?2004l4
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ 
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls -A | wc -l[27mls -A | wc -l
+[?2004l4
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls > lista.txt[27mls > lista.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mprintf "Hola\n" >> lista.txt[27mprintf "Hola\n" >> lista.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mwc -l < lista.txt[27mwc -l < lista.txt
+[?2004l6
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls noexiste 2> errores.txt[27mls noexiste 2> errores.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls -a > ~/etc_lista.txt[27mls -a > ~/etc_lista.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mcd /etc; ls -a > ~/etc_lista.txt[27mcd /etc; ls -a > ~/etc_lista.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: /etc[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m/etc[00m$ [7mfind /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l
+[?2004l0
+[?2004h]0;diegoste123@IdeaPadSlim5: /etc[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m/etc[00m$ cd ..
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: /[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m/[00m$ cd la[Kl[Kab[K[K[K[K[K[Kcd [K[K[Kcd la[K[K~/lab-cli/
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ cd ~/lab-cli/..[Kfind /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l
+[?2004l0
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mprintf "Línea1\nLínea2\n" > test.txt[27mprintf "Línea1\nLínea2\n" > test.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls noexiste 2>> errores.log[27mls noexiste 2>> errores.log
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mfind . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm
+[?2004lrm ./archivo2.txt ./archivo1.txt
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mfind . -maxdepth 1 -name 'archivo*.txt' -print0 | xargs -0 rm --[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind . -maxdepth 1 -name 'archivo*.txt' -print0 | xargs -0 rm --
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ find . -maxdepth 1 -name 'archivo*.txt' -print0 | xargs -0 rm --[9P| xargs echo rm
+[?2004lrm
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mnl test.txt[27mnl test.txt
+[?2004l     1	Línea1
+     2	Línea2
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mwc -l lista.txt[27mwc -l lista.txt
+[?2004l6 lista.txt
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mudo adduser devsec; sudo addgroup ops; sudo usermod -aG ops devsec; touch secreto.txt; sudo chown devsec:ops secreto.txt[27m[7m;[27m[7m sudo chmod 640 secreto.txt[27m[A]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ udo adduser devsec; sudo addgroup ops; sudo usermod -aG ops devsec; touch secreto.txt; sudo chown devsec:ops secreto.txt; sudo chmod 640 secreto.txt
+[?2004lCommand 'udo' not found, but can be installed with:
+sudo apt install udo
+[sudo] password for diegoste123: 
+sudo: a password is required
+[sudo] password for diegoste123: 
+Sorry, try again.
+[sudo] password for diegoste123: 
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ udo adduser devsec; sudo addgroup ops; sudo usermod -aG ops devsec; touch secreto.txt; sudo chown devsec:ops secreto.txt; sudo chmod 640 secreto.txt[A]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[H[2J]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msudo adduser devsec; sudo addgroup ops; sudo usermod -aG ops devsec; touch secreto.txt; sudo chown devsec:ops secreto.tx[27m[7mt[27m[7m; sudo chmod 640 secreto.txt[27m[A]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ sudo adduser devsec; sudo addgroup ops; sudo usermod -aG ops devsec; touch secreto.txt; sudo chown devsec:ops secreto.txt; sudo chmod 640 secreto.txt
+[?2004lfatal: The user `devsec' already exists.
+fatal: The group `ops' already exists.
+touch: cannot touch 'secreto.txt': Permission denied
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ id deve[Ksec
+[?2004luid=1002(devsec) gid=1002(devsec) groups=1002(devsec),100(users),1003(ops)
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ gatent gropu[K[Kup ops
+[?2004lCommand 'gatent' not found, did you mean:
+  command 'getent' from deb libc-bin (2.39-0ubuntu8.5)
+Try: sudo apt install <deb name>
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msudo rm -f secreto.txt[27msudo rm -f secreto.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msudo deluser devsec[27msudo deluser devsec
+[?2004linfo: Removing crontab ...
+info: Removing user `devsec' ...
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msudo delgroup ops[27msudo delgroup ops
+[?2004linfo: Removing group `ops' ...
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [H[2J]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ sudo delgroup opsuser devsecrm -f secreto.txt[6Pgatent group ops[7Pid devsecsudo adduser devsec; sudo addgroup ops; sudo usermod -aG ops devsec; touch secreto.txt; sudo chown devsec:ops secreto.txt; sudo chmod 640 secreto.txt
+[?2004linfo: Adding user `devsec' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `devsec' (1002) ...
+info: Adding new user `devsec' (1002) with group `devsec (1002)' ...
+warn: The home directory `/home/devsec' already exists.  Not touching this directory.
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for devsec
+Enter the new value, or press ENTER for the default
+	Full Name []: Diego Osorio
+	Room Number []: 7
+	Work Phone []: 975216486
+	Home Phone []: 3873447
+	Other []: 975 6066145
+Is the information correct? [Y/n] Y
+info: Adding new user `devsec' to supplemental / extra groups `users' ...
+info: Adding user `devsec' to group `users' ...
+info: Selecting GID from range 1000 to 59999 ...
+info: Adding group `ops' (GID 1003) ...
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mps aux | grep bash[27mps aux | grep bash
+[?2004ldiegost+     309  0.0  0.0   6072  5308 pts/2    Ss+  16:28   0:00 -[01;31m[Kbash[m[K
+diegost+     400  0.0  0.0   6072  5136 pts/1    S+   16:28   0:00 -[01;31m[Kbash[m[K
+diegost+     630  0.0  0.0   6716  5928 pts/0    Ss   16:48   0:00 -[01;31m[Kbash[m[K
+diegost+    1285  0.0  0.0   6208  5352 pts/3    Ss   17:47   0:00 [01;31m[Kbash[m[K -i
+diegost+    1530  0.0  0.0   4088  1880 pts/3    S+   17:57   0:00 grep --color=auto [01;31m[Kbash[m[K
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msystemctl status systemd-logind[27msystemctl status systemd-logind
+[?2004l[?1h=[0;1;32m●[0m systemd-logind.service - User Login Management[m
+     Loaded: loaded (]8;;file://IdeaPadSlim5/usr/lib/systemd/system/systemd-logind.service/usr/lib/systemd/system/systemd-logind.service]8;;; static[0;1;32m[0m)[m
+    Drop-In: /usr/lib/systemd/system/systemd-logind.service.d[m
+             └─]8;;file://IdeaPadSlim5/usr/lib/systemd/system/systemd-logind.service.d/dbus.confdbus.conf]8;;[m
+     Active: [0;1;32mactive (running)[0m since Sat 2025-09-13 16:29:06 -05; 1h 28min ago[m
+       Docs: ]8;;man:sd-login(3)man:sd-login(3)]8;;[m
+             ]8;;man:systemd-logind.service(8)man:systemd-logind.service(8)]8;;[m
+             ]8;;man:logind.conf(5)man:logind.conf(5)]8;;[m
+             ]8;;man:org.freedesktop.login1(5)man:org.freedesktop.login1(5)]8;;[m
+   Main PID: 169 (systemd-logind)[m
+     Status: "[0;1;36mProcessing requests...[0m"[m
+      Tasks: 1 (limit: 8226)[m
+   FD Store: 0[0;38;5;245m (limit: 512)[0m[m
+     Memory: 1.8M ()[m
+     CGroup: /system.slice/systemd-logind.service[m
+             └─[0;38;5;245m169 /usr/lib/systemd/systemd-logind[0m[m
+[m
+Sep 13 16:29:06 IdeaPadSlim5 systemd[1]: Starting systemd-logind.service - User Login Management...[m
+Sep 13 16:29:06 IdeaPadSlim5 systemd-logind[169]: New seat seat0.[m
+Sep 13 16:29:06 IdeaPadSlim5 systemd[1]: Started systemd-logind.service - User Login Management.[m
+Sep 13 16:29:09 IdeaPadSlim5 systemd-logind[169]: New session 6 of user diegoste123.[m
+[K[?1l>[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mjournalctl -u systemd-logind -n 10[27mjournalctl -u systemd-logind -n 10
+[?2004l[?1h=Sep 12 16:34:54 IdeaPadSlim5 systemd[1]: Started systemd-logind.service - User Login Management.[m
+Sep 12 16:34:57 IdeaPadSlim5 systemd-logind[175]: New session 1 of user diegoste123.[m
+[0;1;39m-- Boot c19ee9c4db5e4420849a218a49aba252 --[0m[m
+Sep 13 11:40:18 IdeaPadSlim5 systemd[1]: Starting systemd-logind.service - User Login Management...[m
+Sep 13 11:40:18 IdeaPadSlim5 systemd-logind[184]: New seat seat0.[m
+Sep 13 11:40:18 IdeaPadSlim5 systemd[1]: Started systemd-logind.service - User Login Management.[m
+Sep 13 11:40:21 IdeaPadSlim5 systemd-logind[184]: New session 1 of user diegoste123.[m
+Sep 13 16:29:06 IdeaPadSlim5 systemd[1]: Starting systemd-logind.service - User Login Management...[m
+Sep 13 16:29:06 IdeaPadSlim5 systemd-logind[169]: New seat seat0.[m
+Sep 13 16:29:06 IdeaPadSlim5 systemd[1]: Started systemd-logind.service - User Login Management.[m
+Sep 13 16:29:09 IdeaPadSlim5 systemd-logind[169]: New session 6 of user diegoste123.[m
+[K[?1l>[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msleep 100 &[27msleep 100 &
+[?2004l[1] 1537
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ ps
+[?2004l    PID TTY          TIME CMD
+   1285 pts/3    00:00:00 bash
+   1537 pts/3    00:00:00 sleep
+   1538 pts/3    00:00:00 ps
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ l[Kkill
+[?2004lkill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mnamei -l secreto.txt[27mnamei -l secreto.txt
+[?2004lf: secreto.txt
+-rw-r----- devsec ops secreto.txt
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mid devsec[27mid devsec
+[?2004luid=1002(devsec) gid=1002(devsec) groups=1002(devsec),100(users),1003(ops)
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [H[2J]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mgrep root /etc/passwd[27mgrep root /etc/passwd
+[?2004l[01;31m[Kroot[m[K:x:0:0:[01;31m[Kroot[m[K:/[01;31m[Kroot[m[K:/bin/bash
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msed 's/dato1/secreto/' datos.txt > nuevo.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed 's/dato1/secreto/' datos.txt > nuevo.txt
+[?2004lsed: can't read datos.txt: No such file or directory
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mprintf "linea1: dato1\nlinea2: dato2\n" > datos.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprintf "linea1: dato1\nlinea2: dato2\n" > datos.txt
+[?2004l[1]+  Done                    sleep 100
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7msed 's/dato1/secreto/' datos.txt > nuevo.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csed 's/dato1/secreto/' datos.txt > nuevo.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ cat datos.txt 
+[?2004llinea1: dato1
+linea2: dato2
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ cat nuevo.txt 
+[?2004llinea1: secreto
+linea2: dato2
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mawk -F: '{print $1}' /etc/passwd | sort | uniq[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cawk -F: '{print $1}' /etc/passwd | sort | uniq
+[?2004l_apt
+backup
+bin
+daemon
+devsec
+dhcpcd
+diegoste123
+games
+irc
+landscape
+list
+lp
+mail
+man
+messagebus
+news
+nobody
+polkitd
+proxy
+root
+sync
+sys
+syslog
+systemd-network
+systemd-resolve
+systemd-timesync
+uucp
+uuidd
+www-data
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mprintf "hola\n" | tr 'a-z' 'A-Z' | tee mayus.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprintf "hola\n" | tr 'a-z' 'A-Z' | tee mayus.txt
+[?2004lHOLA
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [H[2J]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mfind /tmp -mtime -5 -type f[27mfind /tmp -mtime -5 -type f
+[?2004lfind: ‘/tmp/systemd-private-c19ee9c4db5e4420849a218a49aba252-systemd-timesyncd.service-METN8c’: Permission denied
+find: ‘/tmp/systemd-private-c19ee9c4db5e4420849a218a49aba252-systemd-resolved.service-jErbg1’: Permission denied
+find: ‘/tmp/systemd-private-c19ee9c4db5e4420849a218a49aba252-wsl-pro.service-Cymdl1’: Permission denied
+find: ‘/tmp/snap-private-tmp’: Permission denied
+find: ‘/tmp/systemd-private-c19ee9c4db5e4420849a218a49aba252-systemd-logind.service-IqAi02’: Permission denied
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls /etc | grep conf | sort | tee lista_conf.txt | wc -l[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls /etc | grep conf | sort | tee lista_conf.txt | wc -l
+[?2004l31
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mgrep -Ei 'error|fail' evidencias/sesion.txt | tee evidencias/hallazgos.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgrep -Ei 'error|fail' evidencias/sesion.txt | tee evidencias/hallazgos.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls noexiste 2> errores.txt[27mls noexiste 2> errores.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls noexiste 2>> errores.log[27mls noexiste 2>> errores.log
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mfile lista_conf.txt && head lista_conf.txt[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfile lista_conf.txt && head lista_conf.txt
+[?2004llista_conf.txt: ASCII text
+adduser.conf
+ca-certificates.conf
+dconf
+debconf.conf
+deluser.conf
+dhcpcd.conf
+e2scrub.conf
+fuse.conf
+gai.conf
+host.conf
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ cat mayus.txt 
+[?2004lHOLA
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ exit
+[?2004lexit
+
+Script done on 2025-09-13 18:07:48-05:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,2 @@
+[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls noexiste 2> errores.txt[27mls noexiste 2> errores.txt
+[?2004l[?2004h]0;diegoste123@IdeaPadSlim5: ~/lab-cli[01;32mdiegoste123@IdeaPadSlim5[00m:[01;34m~/lab-cli[00m$ [7mls noexiste 2>> errores.log[27mls noexiste 2>> errores.log
