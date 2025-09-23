@@ -1,0 +1,27 @@
+Initialized empty Git repository in C:/Users/jesus/DesarrolloSoftware_252/Actividad 6/.git/
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Actividad6-CC3S2.md
+	README.md
+	logs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Actividad6-CC3S2.md
+	logs/
+
+On branch main
+nothing to commit, working tree clean

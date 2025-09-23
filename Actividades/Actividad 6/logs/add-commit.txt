@@ -1,0 +1,10 @@
+[main (root-commit) d7daccf] Commit inicial con README.md
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[main e19f26e] Agregando todos los archivos
+ 5 files changed, 728 insertions(+)
+ create mode 100644 Actividad6-CC3S2.md
+ create mode 100644 logs/add-commit.txt
+ create mode 100644 logs/config.txt
+ create mode 100644 logs/git-version.txt
+ create mode 100644 logs/init-status.txt

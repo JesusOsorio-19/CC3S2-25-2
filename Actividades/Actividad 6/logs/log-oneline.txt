@@ -1,0 +1,17 @@
+commit 3279192f213dac484918ca9d917d85e2a2dafe03
+Author: Diego <jesustello192002@gmail.com>
+Date:   Mon Sep 22 22:26:20 2025 -0500
+
+    agregando nuevo commit
+
+commit e19f26eeb592ee3174e6835378f2c661f2bddd2d
+Author: Diego <jesustello192002@gmail.com>
+Date:   Mon Sep 22 22:24:11 2025 -0500
+
+    Agregando todos los archivos
+
+commit d7daccf9f7fd9b8d9ea3bb8324ba67a4282f4f6f
+Author: Diego <jesustello192002@gmail.com>
+Date:   Mon Sep 22 22:21:45 2025 -0500
+
+    Commit inicial con README.md
