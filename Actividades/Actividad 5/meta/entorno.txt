@@ -1,0 +1,18 @@
+=== INFORMACIÓN DEL ENTORNO ===
+OS: GNU/Linux
+Kernel: 5.15.167.4-microsoft-standard-WSL2
+Arquitectura: x86_64
+Distribución: Ubuntu 24.04.2 LTS
+Python: Python 3.12.3
+Make: GNU Make 4.3
+GNU tar: tar (GNU tar) 1.35
+Bash: GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+Git: git version 2.43.0
+
+=== HERRAMIENTAS DE DESARROLLO ===
+shellcheck: version: 0.9.0
+license: GNU General Public License, version 3
+shfmt: 3.8.0
+ruff: no instalado
+
+Fecha de generación: Mon Sep 22 19:46:34 -05 2025
