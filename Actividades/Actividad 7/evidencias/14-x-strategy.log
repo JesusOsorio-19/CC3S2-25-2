@@ -1,0 +1,16 @@
+*   b24d323 (HEAD -> main) Merge branch 'feature-eol' git commit -m "Merge branch feature-eol con -X renormalize"
+|\  
+| * 7cccf89 (feature-eol) Archivo con terminadores lf
+* |   15994ad Merge branch 'feature-rename' git commit -m "Merge branch 'feature-rename' con -X find-renames=90%"
+|\ \  
+| * | 92516b9 (feature-rename) Renombrando inicio.txt -> renamed-inicio.txt
+| * | 61b34e0 Archivo original
+| |/  
+* |   0a608c4 Merge branch 'feature-x' git commit -m "Merge branch 'feature-x' con -X theirs"
+|\ \  
+| |/  
+|/|   
+| * 3a996a1 (feature-x) Version desde feature x
+* | 591005b Version desde main
+|/  
+* 873cc49 Commit inicial

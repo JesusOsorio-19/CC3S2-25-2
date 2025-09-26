@@ -1,0 +1,10 @@
+commit 2b4d11a92af2e817d18c0bc31fa7c52e22af6350
+gpg: Signature made Fri, Sep 26, 2025 10:38:19 AM HPS
+gpg:                using RSA key C93BFC4F1908AA7396F7C75D0FDCA54822C7D6F1
+gpg: Good signature from "Diego (Act7) <jesustello192002@gmail.com>" [ultimate]
+Merge: 4e644af c419151
+Author: Diego <jesustello192002@gmail.com>
+Date:   Fri Sep 26 10:37:55 2025 -0500
+
+    Merge branch 'feature-signed'
+    git commit -m "Merge firmado con feature-signed"

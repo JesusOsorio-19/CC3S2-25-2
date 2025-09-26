@@ -1,0 +1,6 @@
+* fa6b312 (HEAD -> main) Revert "Merge branch 'add-feature'"
+*   364d4a0 Merge branch 'add-feature' git commit -m "Merge no ff con add-feature"
+|\  
+| * 3f82c5f (add-feature) No fast-forward
+|/  
+* 51715f2 Commit inicial

@@ -1,0 +1,11 @@
+*   f1c41a6 (HEAD -> main) Merge commit 'efc20de911bcce1be541a5ef55d82ed8748ffbe5' git commit -m "Subtree merge de Ejr5"
+|\  
+| * efc20de Modificacion para subtree pull
+* | dc1af5f Add 'vendor/demo/' from commit '65be5016571e42ea36dea6f809f38d2bb64312d6'
+|\| 
+| *   65be501 Merge pull request #1 from JesusOsorio-19/feature/team-feature
+| |\  
+| | * 97acc9b Add collaboration script
+| |/  
+| * 0f4a3e8 Initial commit
+* c21d70c Commit inicial

@@ -1,0 +1,5 @@
+* 465082c (HEAD -> main) Cambio en main que impedirá ff
+| * 71cbf00 (feature-ffonly2) Feature que causara error ff-only
+|/  
+* 10057de (feature-ffonly) Archivo de prueba para ff-only
+* 3ded081 Commit inicial
