@@ -14,7 +14,7 @@
                 {
                     "type": "string",
                     "default": "lab-net",
-                    "description": "Nombre de la red local"
+                    "description": "Red de despliegue del servidor"
                 }
             ]
         }
