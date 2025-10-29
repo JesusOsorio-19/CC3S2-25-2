@@ -1,0 +1,22 @@
+{
+    "variable": [
+        {
+            "name": [
+                {
+                    "type": "string",
+                    "default": "mi-servidor",
+                    "description": "Nombre del servidor local"
+                }
+            ]
+        },
+        {
+            "network": [
+                {
+                    "type": "string",
+                    "default": "lab-net",
+                    "description": "Nombre de la red local"
+                }
+            ]
+        }
+    ]
+}
