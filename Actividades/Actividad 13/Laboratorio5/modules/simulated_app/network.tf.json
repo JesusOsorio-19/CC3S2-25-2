@@ -1,22 +1,31 @@
-{
-    "variable": [
+{ 
+  "variable": [
+    {
+      "name": [
         {
-            "name": [
-                {
-                    "type": "string",
-                    "default": "mi-servidor",
-                    "description": "Nombre del servidor local"
-                }
-            ]
-        },
-        {
-            "network": [
-                {
-                    "type": "string",
-                    "default": "lab-net",
-                    "description": "Red de despliegue del servidor"
-                }
-            ]
+          "type": "string",
+          "default": "mi-servidor",
+          "description": "Nombre del servidor local"
         }
-    ]
+      ]
+    },
+    {
+      "network": [
+        {
+          "type": "string",
+          "default": "lab-net",
+          "description": "Red de despliegue del servidor"
+        }
+      ]
+    },
+    {
+      "port": [
+        {
+          "type": "number",
+          "default": 8080,
+          "description": "Puerto de aplicación en el servidor"
+        }
+      ]
+    }
+  ]
 }
