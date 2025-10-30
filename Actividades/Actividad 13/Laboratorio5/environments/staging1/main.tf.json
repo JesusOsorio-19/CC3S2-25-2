@@ -1,0 +1,26 @@
+{
+    "resource": [
+        {
+            "local_server": [
+                {
+                    "staging1": [
+                        {
+                            "provisioner": [
+                                {
+                                    "local-exec": {
+                                        "command": "echo 'Arrancando servidor ${var.name} en puerto ${var.port} en red ${var.network}'"
+                                    }
+                                }
+                            ],
+                            "triggers": {
+                                "name": "${var.name}",
+                                "network": "${var.network}",
+                                "port": "${var.port}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

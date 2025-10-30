@@ -1,0 +1,26 @@
+{
+    "resource": [
+        {
+            "null_resource": [
+                {
+                    "legacy-app": [
+                        {
+                            "triggers": {
+                                "name": "${var.name}",
+                                "network": "${var.network}",
+                                "port": "${var.port}"
+                            },
+                            "provisioner": [
+                                {
+                                    "local-exec": {
+                                        "command": "echo 'Arrancando ${var.name} en puerto ${var.port} en red ${var.network}'"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

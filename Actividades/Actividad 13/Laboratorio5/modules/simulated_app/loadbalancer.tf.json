@@ -1,0 +1,49 @@
+{
+    "resource": [
+        {
+            "local_server": [
+                {
+                    "server1": [
+                        {
+                            "triggers": {
+                                "name": "server1",
+                                "network": "net1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "server2": [
+                        {
+                            "triggers": {
+                                "name": "server2",
+                                "network": "net1"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "null_resource": [
+                {
+                    "load_balancer": [
+                        {
+                            "triggers": {
+                                "server1_id": "${local_server.server1.id}",
+                                "server2_id": "${local_server.server2.id}"
+                            },
+                            "provisioner": [
+                                {
+                                    "local-exec": {
+                                        "command": "echo 'Load balancer balanceando entre server1 y server2'"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

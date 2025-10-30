@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Terraform Configuration Schema",
+    "type": "object",
+    "properties": {
+        "variable": {
+            "type": "array",
+            "description": "Lista de variables de Terraform"
+        },
+        "resource": {
+            "type": "array",
+            "description": "Lista de recursos de Terraform"
+        }
+    },
+    "anyOf": [
+        {"required": ["variable"]},
+        {"required": ["resource"]}
+    ]
+}
