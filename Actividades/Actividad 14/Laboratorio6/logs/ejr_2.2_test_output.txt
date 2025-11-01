@@ -1,0 +1,61 @@
+=== Recurso con formato por defecto (%Y%m%d) ===
+{
+  "resource": [
+    {
+      "null_resource": [
+        {
+          "daily_backup": [
+            {
+              "triggers": {
+                "timestamp_custom": "20251031",
+                "factory_uuid": "a89315b3-ee9f-42fc-911e-35d41008734b"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+=== Recurso con formato fecha-hora ===
+{
+  "resource": [
+    {
+      "null_resource": [
+        {
+          "hourly_snapshot": [
+            {
+              "triggers": {
+                "timestamp_custom": "2025-10-31_02:56:55",
+                "factory_uuid": "6f71cc53-9421-42d7-a747-225977c643a3"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+=== Recurso con formato año-mes ===
+{
+  "resource": [
+    {
+      "null_resource": [
+        {
+          "monthly_report": [
+            {
+              "triggers": {
+                "timestamp_custom": "202510",
+                "factory_uuid": "76e04e55-8f55-4e63-998a-7bb17846e91b"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Archivo generado: terraform/timestamped_test.tf.json

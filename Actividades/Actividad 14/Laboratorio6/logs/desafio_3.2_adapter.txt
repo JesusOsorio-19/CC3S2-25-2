@@ -1,0 +1,179 @@
+=== Generando archivos ===
+
+=== Test básico: Adapter simple ===
+
+Null resource original:
+{
+  "resource": [
+    {
+      "null_resource": [
+        {
+          "storage_bucket": [
+            {
+              "triggers": {
+                "region": "us-east-1",
+                "versioning": "true",
+                "factory_uuid": "4c7dfd88-54d7-41fb-b9cb-a314edc71c8b",
+                "timestamp": "2025-10-31T18:46:01.012030"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Mock bucket adaptado:
+{
+  "resource": [
+    {
+      "mock_cloud_bucket": [
+        {
+          "storage_bucket": [
+            {
+              "name": "storage_bucket",
+              "region": "us-east-1",
+              "versioning": "true",
+              "factory_uuid": "4c7dfd88-54d7-41fb-b9cb-a314edc71c8b",
+              "timestamp": "2025-10-31T18:46:01.012030"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Generado: terraform/adapter_basic.tf.json
+
+=== Test: Adapter en Composite ===
+
+Módulo con buckets adaptados:
+{
+  "resource": [
+    {
+      "mock_cloud_bucket": [
+        {
+          "bucket_0": [
+            {
+              "name": "bucket_0",
+              "environment": "dev",
+              "index": 0,
+              "factory_uuid": "487f39c0-c6ef-46d0-b867-4eccbdc713ef",
+              "timestamp": "2025-10-31T18:46:01.014036"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mock_cloud_bucket": [
+        {
+          "bucket_1": [
+            {
+              "name": "bucket_1",
+              "environment": "dev",
+              "index": 1,
+              "factory_uuid": "c38abb00-2a2d-4afb-a75a-739ef7ea9e2a",
+              "timestamp": "2025-10-31T18:46:01.014036"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mock_cloud_bucket": [
+        {
+          "bucket_2": [
+            {
+              "name": "bucket_2",
+              "environment": "dev",
+              "index": 2,
+              "factory_uuid": "edba1b60-891e-42e4-9e50-b07f3c248215",
+              "timestamp": "2025-10-31T18:46:01.014036"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Generado: terraform/adapter_composite.tf.json
+
+=== Test: Adapter integrado en Builder ===
+
+Builder con recursos mixtos (null + adapted):
+{
+  "resource": [
+    {
+      "null_resource": [
+        {
+          "placeholder_0": [
+            {
+              "triggers": {
+                "factory_uuid": "394ee629-12db-49e5-b899-6599dcf57aa5",
+                "timestamp": "2025-10-31T18:46:01.016050",
+                "index": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "null_resource": [
+        {
+          "placeholder_1": [
+            {
+              "triggers": {
+                "factory_uuid": "394ee629-12db-49e5-b899-6599dcf57aa5",
+                "timestamp": "2025-10-31T18:46:01.016050",
+                "index": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mock_cloud_bucket": [
+        {
+          "data_lake_0": [
+            {
+              "name": "data_lake_0",
+              "tier": "hot",
+              "zone": 0,
+              "factory_uuid": "5e13de11-efff-4119-9168-0a3671625cec",
+              "timestamp": "2025-10-31T18:46:01.016050"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mock_cloud_bucket": [
+        {
+          "data_lake_1": [
+            {
+              "name": "data_lake_1",
+              "tier": "hot",
+              "zone": 1,
+              "factory_uuid": "d9eb2d48-98e4-4724-8654-b4090eb57fce",
+              "timestamp": "2025-10-31T18:46:01.016050"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+Resumen de recursos:
+  null_resource: 2
+  mock_cloud_bucket: 2
+
+[Builder] Terraform JSON escrito en: terraform/adapter_builder.tf.json
+
+Archivos generados. Estructura JSON válida pero recursos mock.
