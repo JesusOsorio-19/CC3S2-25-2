@@ -1,0 +1,25 @@
+{
+  "resource": {
+    "null_resource": {
+      "iac_logging": {
+        "triggers": {
+          "run_at": "2025-11-10T04:06:21.960453+00:00"
+        },
+        "depends_on": [
+          "null_resource.bucket_access"
+        ],
+        "provisioner": [
+          {
+            "local-exec": {
+              "interpreter": [
+                "python",
+                "-c"
+              ],
+              "command": "import pathlib; pathlib.Path(r'logs').mkdir(parents=True, exist_ok=True); f = open(r'logs/iac.log', 'a', encoding='utf-8'); f.write(f'LOG: Acceso a bucket verificado en: 2025-11-10T04:06:21.960453+00:00\\n'); f.close()"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

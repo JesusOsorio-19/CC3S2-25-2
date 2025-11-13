@@ -1,0 +1,29 @@
+{
+  "resource": {
+    "null_resource": {
+      "bucket_access": {
+        "triggers": {
+          "bucket": "hello-world-storage-bucket",
+          "path": "./buckets/hello-world-storage-bucket",
+          "created_at": "2025-11-10T04:06:21.960453+00:00",
+          "entity": "allAuthenticatedUsers",
+          "role": "READER"
+        },
+        "depends_on": [
+          "null_resource.storage_bucket"
+        ],
+        "provisioner": [
+          {
+            "local-exec": {
+              "interpreter": [
+                "python3",
+                "-c"
+              ],
+              "command": "print(f'Acceso aplicado al bucket: hello-world-storage-bucket\\nRuta: ./buckets/hello-world-storage-bucket\\nFecha Facade: 2025-11-10T04:06:21.960453+00:00')"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

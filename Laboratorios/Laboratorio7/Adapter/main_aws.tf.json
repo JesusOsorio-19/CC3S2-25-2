@@ -1,0 +1,97 @@
+{
+    "resource": {
+        "null_resource": {
+            "aws_policy_attachment_audit_team_ReadOnlyAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+                    "user": "audit-team",
+                    "user_arn": "arn:aws:iam::123456789012:user/audit-team"
+                }
+            },
+            "aws_policy_attachment_automation_01_PowerUserAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/PowerUserAccess",
+                    "user": "automation-01",
+                    "user_arn": "arn:aws:iam::123456789012:user/automation-01"
+                }
+            },
+            "aws_policy_attachment_infrastructure_team_PowerUserAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/PowerUserAccess",
+                    "user": "infrastructure-team",
+                    "user_arn": "arn:aws:iam::123456789012:user/infrastructure-team"
+                }
+            },
+            "aws_policy_attachment_manager_team_AdministratorAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+                    "user": "manager-team",
+                    "user_arn": "arn:aws:iam::123456789012:user/manager-team"
+                }
+            },
+            "aws_policy_attachment_user_01_ReadOnlyAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+                    "user": "user-01",
+                    "user_arn": "arn:aws:iam::123456789012:user/user-01"
+                }
+            },
+            "aws_policy_attachment_user_02_ReadOnlyAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+                    "user": "user-02",
+                    "user_arn": "arn:aws:iam::123456789012:user/user-02"
+                }
+            },
+            "aws_policy_attachment_user_03_PowerUserAccess": {
+                "triggers": {
+                    "policy_arn": "arn:aws:iam::aws:policy/PowerUserAccess",
+                    "user": "user-03",
+                    "user_arn": "arn:aws:iam::123456789012:user/user-03"
+                }
+            },
+            "aws_user_audit_team": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/audit-team",
+                    "user_name": "audit-team"
+                }
+            },
+            "aws_user_automation_01": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/automation-01",
+                    "user_name": "automation-01"
+                }
+            },
+            "aws_user_infrastructure_team": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/infrastructure-team",
+                    "user_name": "infrastructure-team"
+                }
+            },
+            "aws_user_manager_team": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/manager-team",
+                    "user_name": "manager-team"
+                }
+            },
+            "aws_user_user_01": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/user-01",
+                    "user_name": "user-01"
+                }
+            },
+            "aws_user_user_02": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/user-02",
+                    "user_name": "user-02"
+                }
+            },
+            "aws_user_user_03": {
+                "triggers": {
+                    "arn": "arn:aws:iam::123456789012:user/user-03",
+                    "user_name": "user-03"
+                }
+            }
+        }
+    }
+}
