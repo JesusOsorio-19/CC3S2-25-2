@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Servicio Principal (API)
+  api:
+    container_name: jesus-compose-api
+    # Usamos la imagen que ya se construyó o se construye si no existe
+    image: jesus-osorio-microservice:0.1.0
+    build: .
+    # Mapeo de puertos: Host 8080 -> Contenedor 80 (Como  se pide en el ejercicio bonus)
+    ports:
+      - "8080:80"
+    # Bind Mount: Vincula nuestra carpeta actual a /app para 'Hot Reload'
+    # Cualquier cambio que se haga en nuestro código en Windows se verá reflejado al instante
+    volumes:
+      - .:/app
+    # Variables de entorno (ejemplo para conectar con Redis)
+    environment:
+      - REDIS_HOST=cache
+    # Comando para desarrollo con --reload activado
+    command: uvicorn microservice.main:app --host 0.0.0.0 --port 80 --reload
+    # Garantiza que Redis inicie antes que la API
+    depends_on:
+      - cache
+
+  # Servicio de Base de Datos/Caché
+  cache:
+    image: redis:alpine
+    container_name: jesus-compose-redis
+    ports:
+      - "6379:6379"

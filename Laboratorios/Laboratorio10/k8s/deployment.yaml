@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jesus-osorio-deployment
+  labels:
+    app: jesus-microservice
+spec:
+  # 2 réplicas para alta disponibilidad
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jesus-microservice
+  template:
+    metadata:
+      labels:
+        app: jesus-microservice
+    spec:
+      containers:
+      - name: api
+        # Usa la imagen que construimos (versión 0.1.0)
+        image: jesus-osorio-microservice:0.1.0      
+        imagePullPolicy: IfNotPresent # evita que K8s intente descargarla de internet si ya la tiene local
+        ports:
+        - containerPort: 80
+        
+        # Configuración de Liveness Probe (Salud) solicitada
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10    # Chequeo cada 10s
+          failureThreshold: 3  # Falla tras 3 intentos
