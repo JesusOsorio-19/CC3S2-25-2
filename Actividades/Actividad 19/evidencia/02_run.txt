@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE                             COMMAND                  CREATED         STATUS         PORTS                                 NAMES
+b7ba94c3f05b   jesus-osorio-microservice:0.1.0   "uvicorn microservic…"   9 seconds ago   Up 9 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp   jesus-osorio-microservice

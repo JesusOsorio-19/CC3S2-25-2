@@ -1,0 +1,18 @@
+POST REQUEST
+
+HTTP/1.1 201 Created
+date: Sat, 22 Nov 2025 21:28:03 GMT
+server: uvicorn
+content-length: 77
+content-type: application/json
+
+{"name":"ItemEvidencia","description":"Demostración de persistencia","id":1}HTTP/1.1 200 OK
+
+GET REQUEST (Verificación)
+
+date: Sat, 22 Nov 2025 21:28:41 GMT
+server: uvicorn
+content-length: 79
+content-type: application/json
+
+[{"name":"ItemEvidencia","description":"Demostración de persistencia","id":1}]

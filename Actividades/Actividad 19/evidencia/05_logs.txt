@@ -1,0 +1,11 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+2025-11-22 21:26:36,503 - INFO - microservice - Arrancando la aplicación
+2025-11-22 21:26:36,503 - INFO - microservice - Inicializando base de datos en app.db
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:80 (Press CTRL+C to quit)
+INFO:     172.17.0.1:60332 - "GET /api/items/ HTTP/1.1" 200 OK
+2025-11-22 21:28:04,887 - INFO - microservice - Ítem insertado: ItemEvidencia (id=1)
+2025-11-22 21:28:04,887 - INFO - microservice - Ítem creado por la lógica de negocio: {'id': 1, 'name': 'ItemEvidencia', 'description': 'Demostración de persistencia'}
+INFO:     172.17.0.1:41812 - "POST /api/items/ HTTP/1.1" 201 Created
+INFO:     172.17.0.1:60232 - "GET /api/items/ HTTP/1.1" 200 OK

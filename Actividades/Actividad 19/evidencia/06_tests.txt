@@ -1,0 +1,56 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.3, pytest-8.2.1, pluggy-1.6.0 -- c:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\jesus\DesarrolloSoftware_252\Laboratorio10
+configfile: pytest.ini
+plugins: anyio-4.11.0
+collecting ... collected 2 items
+
+tests/test_api.py::test_healthcheck_items_endpoint PASSED                [ 50%]
+tests/test_api.py::test_create_item_and_verify_in_list PASSED            [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\_pytest\config\__init__.py:1448
+  c:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\.venv\Lib\site-packages\_pytest\config\__init__.py:1448: PytestConfigWarning: Unknown config option: python_paths
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+.venv\Lib\site-packages\pydantic\fields.py:814
+.venv\Lib\site-packages\pydantic\fields.py:814
+  c:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\.venv\Lib\site-packages\pydantic\fields.py:814: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.8/migration/
+    warn(
+
+microservice\main.py:24
+  C:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\microservice\main.py:24: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+.venv\Lib\site-packages\fastapi\applications.py:4495
+.venv\Lib\site-packages\fastapi\applications.py:4495
+  c:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\.venv\Lib\site-packages\fastapi\applications.py:4495: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+microservice\main.py:33
+  C:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\microservice\main.py:33: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("shutdown")
+
+tests/test_api.py::test_healthcheck_items_endpoint
+  c:\Users\jesus\DesarrolloSoftware_252\Laboratorio10\.venv\Lib\site-packages\httpx\_client.py:690: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
+    warnings.warn(message, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 2 passed, 8 warnings in 1.07s ========================
