@@ -1,0 +1,39 @@
+﻿Artifacts 
+total 996M
+drwxr-xr-x 1 jesus 197609    0 Dec 14 01:59 .
+drwxr-xr-x 1 jesus 197609    0 Dec 14 01:49 ..
+-rw-r--r-- 1 jesus 197609 750M Dec 14 01:59 order-service.tar
+-rw-r--r-- 1 jesus 197609 1.1K Dec 14 01:09 order-service.yaml
+-rw-r--r-- 1 jesus 197609 394K Dec 14 01:42 order-service-grype.sarif
+-rw-r--r-- 1 jesus 197609    0 Dec 14 01:59 order-service-sbom.json
+-rw-r--r-- 1 jesus 197609 243M Dec 14 01:30 user-service.tar
+-rw-r--r-- 1 jesus 197609 1.1K Dec 14 01:22 user-service.yaml
+-rw-r--r-- 1 jesus 197609 394K Dec 14 01:37 user-service-grype.sarif
+-rw-r--r-- 1 jesus 197609 2.3M Dec 14 01:33 user-service-sbom.json
+
+SBOMs 
+artifacts/order-service-sbom.json
+artifacts/user-service-sbom.json
+
+SCA (SARIF) 
+artifacts/order-service-grype.sarif
+artifacts/user-service-grype.sarif
+
+Manifests 
+artifacts/order-service.yaml
+artifacts/user-service.yaml
+
+Deployments 
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS      IMAGES                  SELECTOR
+order-service   1/1     1            1           64m   order-service   order-service:7cf095b   app=order-service
+user-service    1/1     1            1           66m   user-service    user-service:7cf095b    app=user-service
+
+Services 
+NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+kubernetes      ClusterIP   10.96.0.1       <none>        443/TCP    92m
+order-service   ClusterIP   10.103.21.103   <none>        8001/TCP   64m
+user-service    ClusterIP   10.101.158.38   <none>        8000/TCP   66m
+
+EndpointSlices 
+order-service-j6j6l   IPv4          8001    10.244.0.5     64m
+user-service-h7qwc    IPv4          8000    10.244.0.4     66m
